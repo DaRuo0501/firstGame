@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:c="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <meta charset="UTF-8">
+    <title>登入</title>
+    <link rel="stylesheet" href="/css/login.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+    </style>
+
+</head>
+<body>
+
+<div class="error">
+    <span th:if="${session.errorMessage} != null" th:text="${session.errorMessage}" style="color: red;"></span>
+</div>
+
+<div class="box">
+
+    <form method="post" action="/users/login/create" autocomplete="off">
+
+        <h2>登 入</h2>
+        <div class="inputBox">
+            <input type="text" name="userName" required>
+            <span>使用者名稱</span>
+            <i></i>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="password" required>
+            <span>密碼</span>
+            <i></i>
+        </div>
+        <div class="links">
+            <a href="#">忘記密碼?</a>
+            <a href="/users/register">註冊</a>
+        </div>
+        <div class="boxInput">
+            <input type="submit" value="登入">
+        </div>
+    </form>
+</div>
+</body>
+</html>
